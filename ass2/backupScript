@@ -1,0 +1,72 @@
+#Tyler Watson 260867260
+
+#!/bin/bash
+
+if test $# -lt 3        #check for correct number of arguments
+then
+   echo "You have the incorrect number of arguments. The correct syntax is: ./backup SWITCH FILES DEST MESSAGE. Please try again."
+   exit 1
+fi
+
+
+files=''                #var for file names
+messageArg=0            #var to keep track if the words are in the message (in case the user wishes to add "-D" or a file or directory that exists to the message
+filesFinished=0
+message=''              #var to hold message
+delete=0                #var to keep track if -D is present
+
+for arg in $@           #iterate through arguments
+do
+   if test $arg = "-D" && test $messageArg -eq 0        #check for first delete argument
+   then
+      delete=1
+
+   elif test -d $arg && test $messageArg -eq 0 && test $filesFinished -eq 0        #check if argument is a file
+   then
+origin=$arg
+echo filesgoing
+   for file in $(ls $arg)
+   do 
+echo $files' added'
+      files=$files' '$file
+   done
+echo $files
+   filesFinished=1
+elif test $messageArg -eq 0 && test $filesFinished -eq 1                  #check if argument is a directory for DEST
+   then
+	echo here $arg
+      if test ! -d $arg
+      then
+echo MAKING A DIRECTORY WITH $arg   
+      mkdir $arg
+      fi
+      #echo directory' '$arg
+      DEST=$arg
+      messageArg=1                              #indicate that the following args are for the message
+
+   else                                         #message arg
+      #echo message' '$arg
+      message=$message' '$arg
+
+fi
+done
+
+set `date`              #obtain date information
+cd $origin
+tar -cf backup$3$2$6.tar $files         #tar files
+chmod 600 backup$3$2$6.tar             #make tar file rw for author
+mv backup$3$2$6.tar $DEST               #put tar file in DEST argument
+
+if test $delete -eq 1                   #delete files
+then
+   rm -R $files
+fi
+
+cd $DEST
+
+if test ! -f backups.log                #append message to backups.log
+then
+   touch backups.log
+fi
+
+echo $3$2$6' '$4$5' '$message >> backups.log

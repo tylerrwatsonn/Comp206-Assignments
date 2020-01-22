@@ -1,0 +1,38 @@
+#Tyler Watson 260867260
+#!/bin/bash
+
+if test $# -ne 2
+then
+  echo 'Error: Wrong number of arguments. Please type ./mkproj ARGUMENT OWNER. The argument is the name of the project. The OWNER is the user name the project belongs to.'
+  exit 1
+fi
+
+if test ! -d Projects
+then
+  mkdir Projects
+fi
+
+cd Projects
+if test -d $1
+then
+  cd ..
+  echo 'Error: The project name has already been used. Please select another project name and try again.'
+  exit 1
+else
+  mkdir $1
+fi
+
+cd $1
+
+mkdir archive backup docs assets database source
+
+echo -e  "ls in $1 is:"
+ls
+echo -e "\n"
+
+cd docs
+touch readme.txt
+echo "Created by: $2" > readme.txt
+
+echo -e "readme.txt is as follows:"
+echo `cat readme.txt`

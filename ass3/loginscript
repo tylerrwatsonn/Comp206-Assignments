@@ -1,0 +1,9 @@
+#Tyler Watson 260867260
+
+export PS1=" $USER \w $ "		#changes prompt to username and dynamic path
+echo -e "Welcome $USER to SOCS Bash!"	#welcome message
+alias la='ls -la'	#alias la 
+export HISTSIZE=10	#limit history size to 10
+who | grep "aporpo" #search for my friend
+
+cal	#Extra feature that displays a calendar with the current date highlighted

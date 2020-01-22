@@ -1,0 +1,47 @@
+commit 2acb03e9d8763a7943594a27b551dc6ac9972095 (HEAD -> master)
+Author: Tyler WATSON <twatso5@teaching.CS.McGill.CA>
+Date:   Sun Nov 24 14:08:25 2019 -0500
+
+    Incorrect output fixed by changing the while loop condition
+
+commit 37331f862dc0829a57d8cab75ddea62047c000fe
+Author: Tyler WATSON <twatso5@teaching.CS.McGill.CA>
+Date:   Sat Nov 23 15:07:42 2019 -0500
+
+    Extra comments added to clarify code
+
+commit 363e5136c2d0a48ae6b13772b47caf3d2458e480
+Author: Tyler WATSON <twatso5@teaching.CS.McGill.CA>
+Date:   Fri Nov 22 09:15:22 2019 -0500
+
+    Linked.c did not account for last element now fixed
+
+commit 769c11a25b2dfbd0216a0b746b7e08176e66f3ec
+Author: Tyler WATSON <twatso5@teaching.CS.McGill.CA>
+Date:   Thu Nov 21 15:45:58 2019 -0500
+
+    Updated main.c functionality
+
+commit 2956774e71908022af7cd36820804a2a3ed30146
+Author: Tyler WATSON <twatso5@teaching.CS.McGill.CA>
+Date:   Wed Nov 20 12:18:54 2019 -0500
+
+    Assignment completed
+
+commit 2a74365ec730b068232cb474dbbc15e8250a212e
+Author: Tyler WATSON <twatso5@teaching.CS.McGill.CA>
+Date:   Wed Nov 20 11:23:23 2019 -0500
+
+    ssv and h files
+
+commit 8ef9d24890087d195767c25f0a6db4cea6d1abf9
+Author: Tyler WATSON <twatso5@teaching.CS.McGill.CA>
+Date:   Wed Nov 20 11:22:49 2019 -0500
+
+    all c files (50%)
+
+commit 7fc587480d443bf6638f8ea1318d61a4f90d0bac
+Author: Tyler WATSON <twatso5@teaching.CS.McGill.CA>
+Date:   Wed Nov 20 10:20:42 2019 -0500
+
+    initial ssv.c file
